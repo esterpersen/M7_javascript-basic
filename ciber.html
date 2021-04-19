@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+		integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+	<title>M7_JS_Nivell 01</title>
+</head>
+
+<body>
+
+	<div class="container border">
+
+		<div class="row">
+
+			<div class="col">
+				<h1 class="display-4 p-1">NIVELL 1</h1>
+			</div>
+
+			<div class="row p-3">
+
+				<div class="col">
+					<h4>Exercici 1</h4>
+					<p>L'exercici consisteix a crear un fitxer anomenat ciber.html i mostrar per consola un 'Hola
+						mundo'.</p>
+				</div>
+
+				<div class="col">
+					<h4>Exercici 2</h4>
+					<p>Crea un alert que mostri el teu nom.</p>
+				</div>
+
+				<div class="col">
+					<h4>Exercici 3</h4>
+					<p>Crea una variable que contingui el teu nom i un altre que contingui el teu cognom.</p>
+				</div>
+
+				<div class="col">
+					<h4>Exercici 4</h4>
+					<p>Crea dos variables amb dos números i fes una suma entre ells.</p>
+				</div>
+
+			</div>
+
+			<div class="row p-3">
+
+				<div class="col">
+					<h4>Exercici 5</h4>
+					<p>Crea una variable nota_examen juntament amb un alert que ens digui si l’examen ha estat aprovat o
+						no juntament amb la nota.</p>
+				</div>
+
+				<div class="col">
+					<h4>Exercici 6</h4>
+					<p>Reemplaça la paraula blau per la paraula verd del següent text:</p>
+					<p id="frase">Tinc un cotxe de color blau.</p>
+					<p>Després intenta fer-ho remplaçant les o per les u.</p>
+				</div>
+
+				<div class="col">
+					<h4>Exercici 7</h4>
+					<p>Donat el seguit llistat d'objectes 'taula', 'cadira', 'ordinador', 'libreta', per un bucle que
+						mostri per pantalla cada objecte i la seva posició al llistat.</p>
+				</div>
+
+				<div class="col-3">
+					<h4>Exercici 8</h4>
+					<p>Crea una funció anomenada calculadora que tingui com a entrada els següents paràmetres: operador,
+						valor1 i valor2.
+						Estructura de la funció que faci sumes, restes i multiplicacions. El resultat haurà de ser
+						mostrat per pantalla.</p>
+					<pre>function calculadora( __, __, __)
+{
+……...
+}
+var resultat = calculadora('resta',40,20);</pre>
+
+					<!--Demanar els números i operador-->
+					<input type="number" id="Num1" placeholder="Valor 1"><br>
+					<input type="number" id="Num2" placeholder="Valor 2"></br>
+					<input type="text" id="Operador" placeholder="suma, resta, multi." /><br>
+
+					<input type='button' onClick='main()' Value='Calcula-ho!' />
+					<input type="button" onclick="netejar()" Value="Netejar" />
+
+					<p class="resp">El resultat de la operacio és: </p><p id="demo"></p>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<script>
+
+		//Exercici 1
+
+		console.log("Hola Mundo!");
+
+		//Exercici 2
+
+		alert("Em dic Ester Perello.");
+
+		//Exercici 3
+
+		var nom = "Ester";
+		var cognom = "Perello"
+
+		console.log(nom + " " + cognom);
+
+		//Exercici 4
+
+		var num1 = 60;
+		var num2 = 8;
+		var suma = num1 + num2;
+
+		console.log("La suma entre " + num1 + " i " + num2 + " es " + suma);
+
+		//Exercici 5
+
+		var nota_examen = 4.6;
+		var missatge = "";
+
+		if (nota_examen > 5) {
+			missatge = " Has aprovat amb un " + nota_examen;
+		} else {
+			missatge = "Oh, has suspes l'examen amb un " + nota_examen;
+		}
+
+		alert(missatge);
+
+		//Exercici 6
+
+		var str = document.getElementById("frase").innerHTML;
+		var result = str.replace("blau", "verd");
+		console.log(result);
+
+		var str = document.getElementById("frase").innerHTML;
+		var result = str.replace(/o/gi, "u");
+		console.log(result);
+
+		//Exercici 7 
+
+		var objectes = ["taula", "cadira", "ordinador", "llibreta"];
+
+		for (let i = 0; i < objectes.length; i++) {
+			console.log("L'objecte " + objectes[i] + " esta a la posicio " + i);
+		}
+
+		//Exercici 8
+
+		function main() {
+			var Num1 = parseInt(document.getElementById("Num1").value);
+			var Num2 = parseInt(document.getElementById("Num2").value);
+			var operador = document.getElementById("Operador").value;
+
+			var resultat = calculadora(operador, Num1, Num2);
+			document.getElementById("demo").innerHTML = resultat;
+		}
+
+		function calculadora(op, n1, n2) {
+			var resposta = "";
+
+			//fer la operacio
+			switch (op) {
+				case "suma":
+				case "+":
+					resposta = n1 + n2;
+					break;
+				case "resta":
+				case "-":
+					resposta = n1 - n2;
+					break;
+				case "multiplicacio":
+				case "*":
+					resposta = n1 * n2;
+					break;
+				default:
+					resposta = "Aquesta operacio no està contemplada."
+			}
+
+			return resposta;
+		}
+
+		function netejar() {
+			document.getElementById("Num1").value = ""; // per posar-ho a 0.
+			document.getElementById("Num2").value = ""; // per posar-ho a 0.
+			document.getElementById("Operador").value = ""; // per posar-ho en blanc.
+			missatge = ""; // posar en blanc la variable.
+			document.getElementById("demo").innerHTML = missatge; //Pq on sortien les paraules torni a estar en blanc.
+			document.getElementById("Num1").focus(); // posa el focus a l'id indicat.
+		}
+
+	</script>
+
+	<!-- jQuery and Bootstrap Bundle (includes Popper) -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+		crossorigin="anonymous"></script>
+
+</body>
+
+</html>
