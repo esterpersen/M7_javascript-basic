@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+
+	<title>M7_JS_Nivell 02</title>
+</head>
+
+<body>
+
+	<div class="container border">
+
+		<div class="row">
+
+			<div class="col">
+				<h1 class="display-4 p-1">NIVELL 3</h1>
+			</div>
+		</div>
+
+		<div class="row p-3">
+
+			<div class="col">
+				<h4>Calculadora</h4>
+				<p>Calculadora més usable.</p>
+
+				<!-- calculadora -->
+				<div class="container container-calculadora">
+
+					<div id="mostra" class="row mostra pt-2 pl-2">
+						<!-- on es mostraran els botons clicats -->
+						<div id="display" class="display">
+							<h1 id="display__numeros" class="text-break">0</h1>
+						</div>
+					</div>
+
+					<div class="row numeros-primer-pis">
+						<!--números-->
+						<div class="col"><button id="zero" class="btn btn-numero-primer-pis btn-lg" onClick="mostrar(0)">0</button></div>
+						<div class="col"><button id="u" class="btn btn-numero-primer-pis btn-lg" onClick="mostrar(1)">1</button></div>
+						<div class="col"><button id="dos" class="btn btn-numero-primer-pis btn-lg" onClick="mostrar(2)">2</button></div>
+						<div class="col"><button id="tres" class="btn btn-numero-primer-pis btn-lg" onClick="mostrar(3)">3</button></div>
+					</div>
+
+					<div class="row numeros-segon-pis">
+						<div class="col"><button id="quatre" class="btn btn-numero-segon-pis btn-lg" onClick="mostrar(4)">4</button></div>
+						<div class="col"><button id="cinc" class="btn btn-numero-segon-pis btn-lg" onClick="mostrar(5)">5</button></div>
+						<div class="col"><button id="sis" class="btn btn-numero-segon-pis btn-lg" onClick="mostrar(6)">6</button></div>
+						<div class="col"><button id="set" class="btn btn-numero-segon-pis btn-lg" onClick="mostrar(7)">7</button></div>
+					</div>
+
+					<div class="row numeros-tercer-pis">
+						<div class="col"><button id="vuit" class="btn btn-numero-tercer-pis btn-lg" onClick="mostrar(8)">8</button></div>
+						<div class="col"><button id="nou" class="btn btn-numero-tercer-pis btn-lg" onClick="mostrar(9)">9</button></div>
+						<!-- decimal-->
+						<div class="col"><button id="decimal" class="btn btn-numero-tercer-pis btn-decimal btn-lg" onClick="mostrar('.')">.</button></div>
+						<!-- esborrar / AC -->
+						<div class="col"><button id="esborrar" class="btn btn-numero-tercer-pis btn-ac btn-lg" onClick="reset()">AC</button></div>
+					</div>
+
+					<div class="row operadors p-2">
+						<!-- suma -->
+						<div class="col"><button id="suma" class="btn btn-op btn-lg" onClick="asignOperador('+')">+</button></div>
+
+						<!-- resta -->
+						<div class="col"><button id="resta" class="btn btn-op btn-lg" onClick="asignOperador('-')">-</button></div>
+
+						<!-- multi -->
+						<div class="col"><button id="multi" class="btn btn-op btn-lg" onClick="asignOperador('x')">x</button></div>
+
+						<!-- divi -->
+						<div class="col"><button id="divi" class="btn btn-op btn-lg" onClick="asignOperador('÷')">÷</button></div>
+
+					</div>
+
+					<div class="row igual">
+						<button id="igual" class="btn btn-sm btn-block btn-igual"
+							onClick="ferOperacio()">
+							<h1>=</h1></button>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<!-- Codi Calculadora -->
+	<script src="js/App.js"></script>
+
+	<!-- Popper -->
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+		integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+		crossorigin="anonymous"></script>
+
+	<!-- jquery -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+
+	<!-- BOOTSTRAP DESCARREGAT -->
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
